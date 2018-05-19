@@ -12,6 +12,10 @@
  */
 package com.netlink.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +24,14 @@ import java.io.Serializable;
  * @author fubencheng
  * @version 0.0.1 2018-05-17 21:45 fubencheng
  */
+@Setter
+@Getter
+@ToString
 public class ImageDTO implements Serializable {
     private static final long serialVersionUID = -3959266482397414586L;
+
+    private String title;
+    private String imageUrl;
+    private String keywords;
 
 }

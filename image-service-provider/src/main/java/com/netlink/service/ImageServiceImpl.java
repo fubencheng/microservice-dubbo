@@ -26,7 +26,11 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public ImageDTO getImage() {
-        return null;
+        ImageDTO imageDTO = new ImageDTO();
+        imageDTO.setKeywords("性感尤物|妮小妖|酥胸|性感美图");
+        imageDTO.setTitle("[尤果网]U231性感尤物妮小妖傲人酥胸火辣性感美图_特色图");
+        imageDTO.setImageUrl("http://www.tesetu.com/tupian/jptt/UGirls/201701/19331.html");
+        return imageDTO;
     }
 
 }
