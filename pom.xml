@@ -25,8 +25,9 @@
 
     <modules>
         <module>image-service</module>
-        <module>image-service-provider</module>
         <module>image-service-consumer</module>
+        <module>image-service-provider-alpha</module>
+        <module>image-service-provider-beta</module>
     </modules>
 
   <build>

@@ -9,12 +9,16 @@
         <module name="image-service" />
         <module name="image-service-consumer" />
         <module name="image-service-provider" />
+        <module name="image-service-provider-alpha" />
+        <module name="image-service-provider-beta" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="image-service" target="1.8" />
       <module name="image-service-consumer" target="1.8" />
       <module name="image-service-provider" target="1.8" />
+      <module name="image-service-provider-alpha" target="1.8" />
+      <module name="image-service-provider-beta" target="1.8" />
       <module name="microservice-dubbo" target="1.8" />
     </bytecodeTargetLevel>
   </component>

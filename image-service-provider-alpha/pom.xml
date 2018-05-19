@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>image-service-provider</artifactId>
+    <artifactId>image-service-provider-alpha</artifactId>
     <packaging>jar</packaging>
-    <name>image-service-provider</name>
+    <name>image-service-provider-alpha</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
             <optional>true</optional>
         </dependency>
     </dependencies>

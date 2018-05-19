@@ -4,7 +4,8 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/image-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/image-service-consumer" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/image-service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/image-service-provider-alpha" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/image-service-provider-beta" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
