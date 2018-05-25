@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 只需配置好 log.dir 和 applicationName 属性-->
+<!-- 只需配置好 log.dir 和 appName 属性-->
 <configuration debug="false">
 	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-	<springProperty scope="context" name="applicationName" source="spring.application.name"/>
+	<springProperty scope="context" name="appName" source="spring.application.name"/>
 	<property name="log.dir" value="/Users/ben/alidata1/admin/"/>
 
 	<appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${log.dir}/logs/${applicationName}/${HOSTNAME}_${applicationName}-ss_micro_app_${applicationName}_lt_info.log</file>
+		<file>${log.dir}/${appName}/logs/${HOSTNAME}_${appName}-ss_micro_app_${appName}_lt_info.log</file>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>INFO</level>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${log.dir}/logs/${applicationName}/${HOSTNAME}_${applicationName}-ss_micro_app_${applicationName}_lt_info_%d{yyyy-MM-dd}.log
+			<fileNamePattern>${log.dir}/${appName}/logs/${HOSTNAME}_${appName}-ss_micro_app_${appName}_lt_info_%d{yyyy-MM-dd}.log
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
 		<encoder charset="UTF-8">
-			<pattern>%d [%thread] %-5p [%c] [%F:%L][trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-},parent=%X{X-Parent-Id:-},name=%X{X-Span-Name:-},app=%X{appname:-},begintime=%X{begintime:-},endtime=%X{fin-X1-time:-}]- %msg%n</pattern>
+			<pattern>%d [%thread] %-5p [%c] [%F:%L] - %msg%n</pattern>
 		</encoder>
 	</appender>
 
 	<appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${log.dir}/logs/${applicationName}/${HOSTNAME}_${applicationName}-ss_micro_app_${applicationName}_lt_error.log</file>
+		<file>${log.dir}/${appName}/logs/${HOSTNAME}_${appName}-ss_micro_app_${appName}_lt_error.log</file>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>WARN</level>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${log.dir}/logs/${applicationName}/${HOSTNAME}_${applicationName}-ss_micro_app_${applicationName}_lt_error_%d{yyyy-MM-dd}.log
+			<fileNamePattern>${log.dir}/${appName}/logs/${HOSTNAME}_${appName}-ss_micro_app_${appName}_lt_error_%d{yyyy-MM-dd}.log
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
 		<encoder charset="UTF-8">
-			<pattern>%d [%thread] %-5p [%c] [%F:%L][trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-},parent=%X{X-Parent-Id:-},name=%X{X-Span-Name:-},app=%X{appname:-},begintime=%X{begintime:-},endtime=%X{fin-X1-time:-}]- %msg%n</pattern>
+			<pattern>%d [%thread] %-5p [%c] [%F:%L] - %msg%n</pattern>
 		</encoder>
 	</appender>
 
@@ -61,14 +61,13 @@
 		<appender-ref ref="errorAppender"/>
 	</logger>
 
-	<logger name="com.netflix">
+	<logger name="com.alibaba">
 		<level value="INFO"/>
 		<appender-ref ref="infoAppender"/>
 		<appender-ref ref="errorAppender"/>
 	</logger>
 
-	<root>
-		<level value="INFO"/>
+	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="errorAppender"/>
 	</root>
