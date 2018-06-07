@@ -11,6 +11,7 @@
         <module name="image-service-provider" />
         <module name="image-service-provider-alpha" />
         <module name="image-service-provider-beta" />
+        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="image-service-provider-alpha" target="1.8" />
       <module name="image-service-provider-beta" target="1.8" />
       <module name="microservice-dubbo" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
