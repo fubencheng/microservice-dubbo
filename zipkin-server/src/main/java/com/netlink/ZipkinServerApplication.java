@@ -2,6 +2,7 @@ package com.netlink;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
 import zipkin.server.EnableZipkinServer;
 
 /**
@@ -10,8 +11,8 @@ import zipkin.server.EnableZipkinServer;
  * @author fubencheng
  * @version 0.0.1 2018-05-15 10:44 fubencheng
  */
-//@EnableZipkinStreamServer
-@EnableZipkinServer
+@EnableZipkinStreamServer
+//@EnableZipkinServer
 @SpringBootApplication
 public class ZipkinServerApplication {
     public static void main(String[] args) {
