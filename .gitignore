@@ -1,0 +1,10 @@
+# Created by .ignore support plugin
+# IntelliJ project files
+.idea
+*.iml
+
+.gitignore
+image-service-consumer/target
+image-service-provider-alpha/target
+image-service-provider-beta/target
+image-service/target
