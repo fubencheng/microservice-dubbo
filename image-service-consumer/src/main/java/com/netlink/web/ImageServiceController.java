@@ -15,9 +15,14 @@ package com.netlink.web;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.netlink.dto.ImageDTO;
 import com.netlink.service.ImageService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * ImageServiceController
@@ -25,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author fubencheng
  * @version 0.0.1 2018-05-18 10:18 fubencheng
  */
+@Slf4j
 @RestController
 @RequestMapping("/image")
 public class ImageServiceController {
@@ -32,10 +38,21 @@ public class ImageServiceController {
     @Reference(version = "1.0.0", loadbalance = "roundrobin")
     private ImageService imageService;
 
+    private String appName = "image-service-provider";
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     @GetMapping("/list")
     public ImageDTO getImageList() {
-
         return imageService.getImage();
+    }
+
+    @GetMapping("")
+    public ImageDTO getImageByTitle(@RequestParam("title") String title){
+        log.info("query image list! title={}", title);
+
+        return restTemplate.getForEntity("http://" + appName + "/image?title=" + title, ImageDTO.class).getBody();
     }
 
 }
